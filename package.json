@@ -16,5 +16,8 @@
   },
   "author": "Alo",
   "license": "ISC",
+  "engines": {
+    "node": "v16.14.2"
+  },
   "description": ""
 }

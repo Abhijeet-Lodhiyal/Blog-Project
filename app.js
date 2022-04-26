@@ -58,7 +58,11 @@ app.get("/posts/:cont",function(req,res){
     });
 
 });
-
-app.listen(3000,function(res){
+let port=process.env.PORT;
+if(port == null || port=="")
+{
+    port =3000;
+}
+app.listen(port,function(res){
     console.log("Listening on port 3000");
 });
