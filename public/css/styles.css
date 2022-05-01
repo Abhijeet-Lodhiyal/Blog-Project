@@ -3,9 +3,19 @@ p
     font-family: 'Roboto', sans-serif;
 }
 
+* {
+    margin: 0;
+}
+
+body ,html
+{
+    height: 100%;
+}
+
 body
 {
-    background-color: #F7F5F2;
+   
+    background-color: #eeeee7;
     text-align: left;
     margin-bottom: 50px;
     font-size: 1.3rem;
@@ -16,19 +26,23 @@ h1
     font-size: 3.8rem;
     font-family: 'Merriweather',sans-serif;
 }
-
-
-
 .nav
 {
-    padding: 20px 100px;
+    padding: 20px 300px;
     background-color: #8D8DAA;
 }
-@media screen and (min-width:1600px) {
+
+@media screen and (max-width:1600px) {
+   
+    #main
+    {
+        padding: 7% 7%;
+    }
     .nav
     {
-        padding: 20px 300px;
+        padding: 20px 50px;
     }
+    
 }
 
 .navbar-brand
@@ -37,20 +51,32 @@ h1
     font-family: 'Calligraffitti', cursive;
 }
 
+.container{
+    min-width: 100%;
+}
+
+
+.push{
+    height: 50px;
+}
 #main
 {
     padding: 7% 15%;
-   
+    min-height: 86.1vh;
+    margin-bottom: -50px;
+ 
 }
 
 #Foot
 {
     background-color: #F56D91;
-    padding: 30px;
+    padding: 10px;
     text-align: center;
     width: 100%;
-    position: fixed;
-    bottom: 0;
+    height: 50px;
+  
+   
+
 }
 
 
