@@ -1,9 +1,11 @@
+require("dotenv").config();
 const express=require("express");
 const bodyParser=require("body-parser");
 const _=require("lodash");
 const ejs=require("ejs");
 const app=express();
 const mongoose=require("mongoose");
+const md5=require("md5");
 
 mongoose.connect("mongodb+srv://abhijeetlodhiyalALO:komedymatKRO5@cluster0.35oj1.mongodb.net/MyBlog");
 
@@ -11,7 +13,13 @@ const blogSchema=new mongoose.Schema({
     title:String,
     content:String
 });
+const editorSchema=new mongoose.Schema({
+    name:String,
+    password:String
+});
 const Item=mongoose.model("Item",blogSchema);
+const Editor=mongoose.model("Editor",editorSchema);
+
 
 app.set("view engine","ejs");
 app.use(bodyParser.urlencoded({extended:true}));
@@ -32,8 +40,31 @@ app.get("/about",function (req,res) {
 app.get("/compose_KAT5",function(req,res){
     res.render("compose");
 });
+app.get("/login",function(req,res)
+{
+    res.render("login");
+});
 
+app.post("/login",function(req,res){
+const editorName=req.body.name;
+const editorPassword=md5(req.body.password);
+console.log(editorPassword);
+Editor.findOne({name:editorName},function(err,results){
+ if(!err)
+ {
+   
+    if(results)
+    {
+        console.log(results.password);
+        if(results.password == editorPassword)
+        {
+            res.render("compose");
+        }
+    }
 
+ }
+});
+});
 app.post("/",function(req,res){
 
 const item=new Item({
