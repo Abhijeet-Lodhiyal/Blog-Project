@@ -37,9 +37,7 @@ app.get("/contact",function (req,res) {
 app.get("/about",function (req,res) {
     res.render("about");
 });
-app.get("/compose_KAT5",function(req,res){
-    res.render("compose");
-});
+
 app.get("/login",function(req,res)
 {
     res.render("login");
