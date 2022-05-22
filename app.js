@@ -58,6 +58,8 @@ Editor.findOne({name:editorName},function(err,results){
         {
             res.render("compose");
         }
+        else
+        alert("Wrong credentials");
     }
 
  }
