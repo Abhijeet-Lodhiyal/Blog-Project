@@ -1,13 +1,8 @@
 <%-include("header")-%>
-
-<form action="/login" method="post">
-    <input type="text" placeholder="Name" name="name">
-    <br>
-    <br>
-    <input type="password" placeholder="password" name="password">
-    <br>
-    <br>
-    <input type="submit">
+<form action="/login" method="post" class="form-group">
+    <input type="text" placeholder="Name" name="name" class="form-control m-2 form-width">
+    <input type="password" placeholder="password" name="password"  class="form-control m-2 form-width">
+    <input type="submit" class="btn btn-primary m-3">
 </form>
 
 <%-include("footer") -%>

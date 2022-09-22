@@ -1,6 +1,6 @@
 <%- include("header")-%>
 
-<form action="/" method="post">
+<form action="/" method="post" enctype="multipart/form-data">
     <label for="">Title</label>
     <br>
     <input type="text" name="postTitle">
@@ -9,6 +9,7 @@
     <br>
     <textarea name="postContent" id="" cols="150" rows="10"></textarea>
     <br>
+    <input type="file" name="file">
     <button type="submit" name="submit" class="Submit">Submit</button>
 </form>
 
